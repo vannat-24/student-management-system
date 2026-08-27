@@ -1,0 +1,59 @@
+១. assets/
+
+assets/css/style.css: ផ្ទុក CSS Custom, Tailwind directives (@tailwind base;, @tailwind components;, @tailwind utilities;) និងការកំណត់ពុម្ពអក្សរ (Font) ទូទាំងកម្មវិធី។
+
+២. components/ (ផ្នែក UI ដែលអាចប្រើឡើងវិញបាន)
+
+Navbar.vue: របាររុករកខាងលើ បង្ហាញ Menu, ព័ត៌មានគណនី និងប៊ូតុងប្តូរ Role សាកល្បង។
+
+Admin.vue: ផ្ទាំងគ្រប់គ្រងសម្រាប់ Admin (ថែម/លុបឈ្មោះសិស្ស, ចុច Lock ពិន្ទុ)។
+
+Teacher.vue: តារាងសម្រាប់លោកគ្រូ/អ្នកគ្រូ បញ្ចូល និងកែប្រែពិន្ទុមុខវិជ្ជា។
+
+Student.vue: ផ្ទាំងកាតបង្ហាញលទ្ធផលពិន្ទុ មធ្យមភាគ និទ្ទេស និងចំណាត់ថ្នាក់ផ្ទាល់ខ្លួនរបស់សិស្ស។
+
+៣. composables/ (State Management & Logic ចែករំលែក)
+
+useAuth.ts: គ្រប់គ្រងស្ថានភាពអ្នកប្រើប្រាស់ (User state), ការ Login/Logout និងការប្តូរសិទ្ធិ (admin, teacher, student)។
+
+useScore.ts: គ្រប់គ្រងទិន្នន័យពិន្ទុ (CRUD operations), ការទាញទិន្នន័យពី API និងការ Sync ជាមួយ localStorage។
+
+៤. layouts/ (ស៊ុមទំព័រទូទៅ)
+
+default.vue: ស៊ុមទំព័រទូទៅដែលមានបង្កប់ Navbar ស្រាប់សម្រាប់ទំព័រ Dashboard និង Gradebook។
+
+auth.vue: ស៊ុមទំព័រទទេស្អាត (គ្មាន Navbar/Sidebar) សម្រាប់តែទំព័រ Login និង Register។
+
+៥. middleware/
+
+auth.ts: ត្រួតពិនិត្យសិទ្ធិមុននឹងបើកទំព័រណាមួយ (Route Guard) ដូចជាទប់ស្កាត់ Student មិនឱ្យចូលទំព័រ Admin ឬ Teacher។
+
+៦. pages/ (ប្រព័ន្ធ Routing ដោយស្វ័យប្រវត្តិ)
+
+index.vue (/): ទំព័រដើម បង្ហាញស្ថិតិសង្ខេប (Overview Dashboard)។
+
+admin.vue (/admin): ទំព័រផ្លូវការសម្រាប់ Admin គ្រប់គ្រងបញ្ជីថ្នាក់រៀន។
+
+gradebook.vue (/gradebook): ទំព័រផ្លូវការសម្រាប់ Teacher បញ្ចូល និងពិនិត្យពិន្ទុ។
+
+student.vue (/student): ទំព័រសម្រាប់សិស្សពិនិត្យមើលលទ្ធផលប្រចាំខែ។
+
+auth/login.vue & register.vue (/auth/login, /auth/register): ទំព័រចុះឈ្មោះ និងចូលប្រើប្រាស់។
+
+៧. server/ (Backend / Nitro Mock API)
+
+server/api/students.get.ts: API Endpoint សម្រាប់ផ្ដល់ទិន្នន័យសិស្ស និងពិន្ទុមកឱ្យ Frontend តាមរយៈ useFetch('/api/students') ដោយមិនបាច់ប្រើ Database ក្រៅ។
+
+៨. types/
+
+index.d.ts: កំណត់ TypeScript Interfaces/Types (ទម្រង់ទិន្នន័យសិស្ស, ពិន្ទុ, Role, Class Info) ដើម្បីការពារកុំឱ្យសរសេរខុស Property។
+
+៩. utils/
+
+gradeCalculation.ts: ផ្ទុក Function គណនាគណិតវិទ្យាសុទ្ធ (គណនាពិន្ទុសរុប, មធ្យមភាគ, កាត់និទ្ទេស A–F, និងតម្រៀបចំណាត់ថ្នាក់លេខ ១, ២, ៣)។
+
+១០. Root Files
+
+app.vue: ច្រកចូលគោល (Main Entry Point) ដែលផ្ទុក <NuxtLayout> និង <NuxtPage/>។
+
+nuxt.config.ts: កន្លែងកំណត់ Setting របស់ Nuxt (Modules, CSS paths, Head meta tags)។
