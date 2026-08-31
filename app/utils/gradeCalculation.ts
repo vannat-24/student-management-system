@@ -2,7 +2,7 @@ import type { RawStudent, ComputedStudent, SubjectScores, GradeLetter } from '~/
 /**
  * ១. គណនាពិន្ទុសរុបពីមុខវិជ្ជាទាំង ៦
  */
-export const calculateTotalScore = (scores: SubjectScores): number => {
+export const calculateTotalScore = (scores: SubjectScores): number => {   
   const values = Object.values(scores)
   return values.reduce((sum, score) => sum + (Number(score) || 0), 0)
 }

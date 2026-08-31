@@ -1,3 +1,14 @@
+<!-- pages/gradebook.vue -->
+<script setup lang="ts">
+import Teacher from '~/components/Teacher.vue'
+
+definePageMeta({
+  middleware: 'auth'
+})
+</script>
+
 <template>
-    <h1>hello gradebook</h1>
+  <div>
+    <Teacher />
+  </div>
 </template>

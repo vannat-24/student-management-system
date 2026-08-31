@@ -1,3 +1,14 @@
+<!-- pages/admin.vue -->
+<script setup lang="ts">
+import Admin from '~/components/Admin.vue'
+
+definePageMeta({
+  middleware: 'auth'
+})
+</script>
+
 <template>
-    <h1>hello admin</h1>
+  <div>
+    <Admin />
+  </div>
 </template>

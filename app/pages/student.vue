@@ -1,5 +1,14 @@
+<!-- pages/student.vue -->
+<script setup lang="ts">
+import Student from '~/components/Student.vue'
+
+definePageMeta({
+  middleware: 'auth'
+})
+</script>
+
 <template>
-    <h1>
-        hello student
-    </h1>
+  <div>
+    <Student />
+  </div>
 </template>
